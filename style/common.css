@@ -1,0 +1,22 @@
+* {
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', SimSun, sans-serif;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  background-image: url(http://olo3fohgk.bkt.clouddn.com/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 14px;
+  margin: 0;
+}
+
+button {
+  height: 40px;
+  padding: 0 15px;
+  font-size: 0.9rem;
+  background: none;
+  color: #efefef;
+  border: 1px solid #efefef;
+  cursor: pointer;
+}

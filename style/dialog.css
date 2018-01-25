@@ -1,0 +1,74 @@
+body {
+  display: flex;
+  color: #fff;
+}
+.nomal-dialog-section,
+.beauty-dialog-section {
+  position: relative;
+  flex: 1;
+  height: calc(100vh - 100px);
+  border: 1px solid #adadad;
+  padding: 20px;
+  min-height: 256px;
+  max-height: 29vw;
+}
+.nomal-dialog-section p,
+.beauty-dialog-section p {
+  text-align: center;
+  font-size: 16px;
+}
+.nomal-dialog-section {
+  margin: 50px 25px 0 50px;
+}
+.beauty-dialog-section {
+  margin: 50px 50px 0 25px;
+}
+.nomal-dialog-section button,
+.beauty-dialog-section button {
+  margin-bottom: 20px;
+}
+@keyframes button-hover-animation {
+  0% {
+    border-color: #efefef;
+    box-shadow: 0 0 4px #fff;
+    text-shadow: 0 0 0 #fff;
+  }
+  50% {
+    border-color: #bdbdbd;
+    box-shadow: 0 0 20px #fff;
+    text-shadow: 0 0 4px #fff;
+  }
+  100% {
+    border-color: #efefef;
+    box-shadow: 0 0 4px #fff;
+    text-shadow: 0 0 0 #fff;
+  }
+}
+.nomal-dialog-section button:hover,
+.beauty-dialog-section button:hover {
+  animation: button-hover-animation 3s infinite linear;
+}
+.beauty-dialog-section .beauty-modal {
+  border: 1px solid #efefef;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #fff;
+  color: #555;
+  width: 200px;
+  height: 130px;
+  text-align: center;
+  font-size: 16px;
+}
+.beauty-dialog-section .beauty-modal[open] {
+  animation: beauty-dialog-show 1s both linear;
+}
+@keyframes beauty-dialog-show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.beauty-dialog-section .beauty-modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+}

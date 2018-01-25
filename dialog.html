@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Dialog元素demo</title>
+  <link rel="shortcut icon" href="https://ashshen.cc/wp-content/uploads/2017/03/app-icon180180.png">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <meta name="renderer" content="webkit">
+  <link rel="stylesheet" href="./style/common.css">
+  <link rel="stylesheet" href="./style/dialog.css">
+</head>
+<body>
+  <div class="nomal-dialog-section">
+    <p>基本dialog元素</p>
+    <button type="button" id="normal-show">show ( )</button>
+    <br>
+    <button type="button" id="normal-show-modal">showModal ( )</button>
+    <br>
+    <button type="button" id="normal-close">close ( )</button>
+    <dialog id="normal-dialog">
+      content here!
+    </dialog>
+  </div>
+  <div class="beauty-dialog-section">
+    <p>带样式和动画的dialog元素</p>
+    <button type="button" id="beauty-show">show ( )</button>
+    <br>
+    <button type="button" id="beauty-show-modal">showModal ( )</button>
+    <br>
+    <button type="button" id="beauty-close">close ( )</button>
+    <dialog id="beauty-dialog" class="beauty-modal">
+      content here!
+    </dialog>
+  </div>
+</body>
+<script type="text/javascript">
+  window.onload = function() {
+    // id获取元素
+    const $ = function(id) {
+      return document.getElementById(id)
+    }
+
+    // 事件对象
+    const funcObj = {
+      'normal-show': ['normal-dialog', 'show'],
+      'normal-show-modal': ['normal-dialog', 'showModal'],
+      'normal-close': ['normal-dialog', 'close'],
+      'beauty-show': ['beauty-dialog', 'show'],
+      'beauty-show-modal': ['beauty-dialog', 'showModal'],
+      'beauty-close': ['beauty-dialog', 'close'],
+    }
+
+    // 事件监听
+    document.body.addEventListener('click', e => {
+      const id = e.target.getAttribute('id')
+
+      id && funcObj[id] && $(funcObj[id][0])[funcObj[id][1]]()
+    })
+
+  }
+</script>
+</html>
